@@ -1,5 +1,5 @@
 FROM library/openjdk
-MAINTAINER Grant Shipley, https://github.com/gshipley
+MAINTAINER John Stephenson, https://github.com/johnnyfleet
 
 HEALTHCHECK --interval=5s \
             --timeout=5s \
