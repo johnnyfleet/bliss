@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - set VERSION=curl http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}'
+  - VERSION=$(curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}')
   - docker build -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:$VERSION .
 
 deploy:
