@@ -1,4 +1,4 @@
-FROM library/openjdk
+FROM library/openjdk:alpine
 MAINTAINER John Stephenson, https://github.com/johnnyfleet
 
 HEALTHCHECK --interval=5s \
