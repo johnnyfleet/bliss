@@ -5,8 +5,9 @@ services:
   - docker
 
 before_install:
-  - docker build -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:20180529 .
-  
+  - set VERSION=curl http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}'
+  - docker build -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:$VERSION .
+
 deploy:
   provider: script
   script: bash docker_push
