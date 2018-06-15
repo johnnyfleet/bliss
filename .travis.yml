@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t johnnyfleet/bliss .
+  - docker build -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:20180529 .
   
 deploy:
   provider: script
