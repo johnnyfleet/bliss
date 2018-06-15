@@ -5,6 +5,8 @@ HEALTHCHECK --interval=5s \
             --timeout=5s \
             CMD curl -f http://127.0.0.1:3220 || exit 1
 
+RUN apt-get update && apt-get install -y curl
+
 # Rev-locking this to ensure reproducible builds
 #RUN wget -O /tmp/runas.sh 'https://raw.githubusercontent.com/coppit/docker-inotify-command/dd981dc799362d47387da584e1a276bbd1f1bd1b/runas.sh'
 RUN wget -O /tmp/mapids.sh 'https://github.com/coppit/docker-inotify-command/blob/439b1f0789f8b86b802447146f54a15c99e43331/mapids.sh'
