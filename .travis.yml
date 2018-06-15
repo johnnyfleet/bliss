@@ -5,7 +5,7 @@ services:
   - docker
 
 before_script:
-  - docker pull jihnnyfleet/bliss || true
+  - docker pull johnnyfleet/bliss || true
   
 script:
   - VERSION=$(curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}')
