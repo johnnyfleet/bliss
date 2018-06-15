@@ -4,9 +4,12 @@ sudo: required
 services:
   - docker
 
-before_install:
+before_script:
+  - docker pull jihnnyfleet/bliss || true
+  
+script:
   - VERSION=$(curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}')
-  - docker build -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:$VERSION .
+  - docker build --pull --cache-from johnnyfleet/bliss -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:$VERSION .
 
 deploy:
   provider: script
