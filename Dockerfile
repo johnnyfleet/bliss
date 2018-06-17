@@ -25,7 +25,7 @@ RUN curl http://www.blisshq.com/app/latest-linux-version|xargs wget -O /tmp/late
 
 RUN echo INSTALL_PATH=/bliss > /tmp/auto-install.properties
 RUN java -jar /tmp/latest.jar -options /tmp/auto-install.properties
-RUN ln -s /config /root
+RUN ln -s /root /config
 RUN chmod 777 /bliss
 CMD /bliss/bin/bliss.sh
 
