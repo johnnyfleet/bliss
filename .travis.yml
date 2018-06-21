@@ -9,7 +9,7 @@ before_script:
   
 script:
   - VERSION=$(curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}')
-  - docker build --pull --cache-from johnnyfleet/bliss -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:$VERSION .
+  - docker build --pull -t johnnyfleet/bliss:latest -t johnnyfleet/bliss:$VERSION .
 
 deploy:
   provider: script
