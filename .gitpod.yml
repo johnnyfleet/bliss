@@ -1,2 +1,3 @@
 tasks:
-  - command: docker build -t johnnyfleet/bliss .
+  - prebuild: docker build -t johnnyfleet/bliss . 
+  - init: docker run -d -p 3220:3220 johnnyfleet/bliss 
