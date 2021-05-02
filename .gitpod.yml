@@ -1,3 +1,2 @@
 tasks:
-  - init: 'echo "TODO: Replace with init/build command"'
-    command: Escape
+  - command: docker build -t johnnyfleet/bliss .
