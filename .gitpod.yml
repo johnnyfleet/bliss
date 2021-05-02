@@ -1,6 +1,6 @@
 tasks:
-  - prebuild: docker build -t johnnyfleet/bliss . 
-  - init: docker run -d -p 3220:3220 johnnyfleet/bliss 
+  - prebuild: docker build -t johnnyfleet/bliss . && gp sync-done boot
+  - init: gp sync-await boot && docker run -d -p 3220:3220 johnnyfleet/bliss 
 
 github:
   prebuilds:
