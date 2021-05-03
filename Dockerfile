@@ -1,4 +1,4 @@
-FROM library/openjdk:alpine
+FROM library/openjdk:jre-alpine
 LABEL maintainer="John Stephenson, https://github.com/johnnyfleet"
 
 HEALTHCHECK --interval=5s \
