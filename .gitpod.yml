@@ -5,8 +5,8 @@ tasks:
 
 ports:
   - port: 3220
-    onOpen: open-browser
-    visibility: public
+    onOpen: ignore
+    visibility: private
 
 github:
   prebuilds:
