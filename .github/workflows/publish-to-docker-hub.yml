@@ -36,4 +36,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: johnnyfleet/test
+          tags: johnnyfleet/bliss:test
