@@ -1,4 +1,4 @@
-FROM library/openjdk:17
+FROM library/openjdk:latest
 LABEL maintainer="John Stephenson, https://github.com/johnnyfleet"
 
 HEALTHCHECK --interval=5s \
