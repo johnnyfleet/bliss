@@ -1,4 +1,4 @@
-FROM library/openjdk:8u312-jre-slim
+FROM azul/zulu-openjdk-alpine:11.0.11-jre
 LABEL maintainer="John Stephenson, https://github.com/johnnyfleet"
 
 HEALTHCHECK --interval=5s \
