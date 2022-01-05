@@ -13,6 +13,12 @@ jobs:
     - uses: actions/checkout@master
 
     - run: docker build . -t johnnyfleet/bliss:${{ github.sha }}
+
+    - name: Scan image
+      uses: anchore/scan-action@v3
+      with:
+        image: johnnyfleet/bliss:${{ github.sha }}
+        fail-build: false
       
     - uses: Azure/container-scan@v0
       with:
