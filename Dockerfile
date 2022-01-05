@@ -1,11 +1,11 @@
-FROM azul/zulu-openjdk-alpine:17.0.1-17.30.15-jre
+FROM openjdk:11.0.13-slim-buster
 LABEL maintainer="John Stephenson, https://github.com/johnnyfleet"
 
 HEALTHCHECK --interval=5s \
             --timeout=5s \
             CMD curl -f http://127.0.0.1:3220 || exit 1
 
-RUN apk add --no-cache curl bash
+RUN apt-get update && apt-get install -y wget curl bash
 
 # Rev-locking this to ensure reproducible builds
 #RUN wget -O /tmp/runas.sh 'https://raw.githubusercontent.com/coppit/docker-inotify-command/dd981dc799362d47387da584e1a276bbd1f1bd1b/runas.sh'
