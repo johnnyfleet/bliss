@@ -36,4 +36,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: johnnyfleet/bliss:test
+          tags: johnnyfleet/bliss:test-${{ steps.version.outputs.TAG_NAME }}
