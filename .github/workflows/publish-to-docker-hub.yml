@@ -5,7 +5,9 @@
 
 name: Publish to Docker Hub
 
-on: [push]
+on: 
+  push:    
+    branches: [ master ]  
 
 jobs:
   push_to_registry:
