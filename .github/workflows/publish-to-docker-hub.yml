@@ -29,7 +29,7 @@ jobs:
 
       - name: Calculate the version of BlissHQ
         id: version-check
-        run: ./.github/scripts/build.sh
+        run: ./.github/scripts/check-bliss-version.sh
         shell: bash
     
       - name: Build and push Docker image
