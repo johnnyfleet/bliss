@@ -30,7 +30,7 @@ jobs:
           images: johnnyfleet/bliss
 
       - name: Calculate the version of BlissHQ
-        id: version
+        id: version-check
         uses: actions/github-script@v5
         with:
           script: curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}'
@@ -41,5 +41,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: johnnyfleet/bliss:latest johnnyfleet/"${{steps.version.outputs.result}}"
+          tags: johnnyfleet/bliss:latest johnnyfleet/${{steps.version-check.outputs.result}}
           labels: ${{ steps.meta.outputs.labels }}
