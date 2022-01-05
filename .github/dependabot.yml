@@ -5,3 +5,12 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    assignees:
+      - "johnnyfleet"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "johnnyfleet"
