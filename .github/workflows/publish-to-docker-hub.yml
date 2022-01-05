@@ -31,10 +31,8 @@ jobs:
 
       - name: Calculate the version of BlissHQ
         id: version-check
-        uses: actions/github-script@v5
-        with:
-          script: curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}'
-          result-encoding: string
+        run: ./.github/scripts/build.sh
+        shell: bash
     
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
