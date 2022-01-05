@@ -22,8 +22,9 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Calculate the version of BlissHQ
-        id: version-check
-        run: ./.github/scripts/check-bliss-version.sh
+        id: version
+        run: |
+          echo "::set-output name=TAG_NAME::$(curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}')"
         shell: bash
 
       - name: Set up Docker Buildx
@@ -35,4 +36,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/bliss:latest johnnyfleet/bliss:${{steps.version-check.outputs.result}}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/bliss:latest,johnnyfleet/bliss:${{steps.version.outputs.TAG_NAME}}
