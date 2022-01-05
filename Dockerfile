@@ -1,4 +1,4 @@
-FROM azul/zulu-openjdk-alpine:16.0.0-jre
+FROM azul/zulu-openjdk-alpine:17.0.1-17.30.15-jre
 LABEL maintainer="John Stephenson, https://github.com/johnnyfleet"
 
 HEALTHCHECK --interval=5s \
