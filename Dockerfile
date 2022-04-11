@@ -21,7 +21,7 @@ ENV UMASK 0000
 ENV UMAP ""
 ENV GMAP ""
 
-RUN curl http://www.blisshq.com/app/latest-linux-version|xargs wget -O /tmp/latest.jar
+RUN curl -L http://www.blisshq.com/app/latest-linux-version|xargs wget -O /tmp/latest.jar
 
 RUN echo INSTALL_PATH=/bliss > /tmp/auto-install.properties
 RUN java -jar /tmp/latest.jar -options /tmp/auto-install.properties
