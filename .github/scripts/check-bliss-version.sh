@@ -1,1 +1,1 @@
-curl -s http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}'
+curl -Ls http://www.blisshq.com/app/latest-linux-version | awk -F'[-.]' '{print $5}'
