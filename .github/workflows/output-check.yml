@@ -28,5 +28,5 @@ jobs:
     needs: job1
     steps:
       - run: |
-        echo "${{needs.job1.outputs.fav-animal}}"
-        echo "${{needs.job1.outputs.fav-number}}"
+        echo "${{needs.job1.outputs.FAV_COLOR}}"
+        echo "${{needs.job1.outputs.FAV_NUMBER}}"
