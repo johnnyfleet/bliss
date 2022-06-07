@@ -5,7 +5,7 @@ on:
     branches: [ get-bliss-releases ]  
 
 jobs:
-  check_output:
+  job1:
     name: Run the script to get an output that can be used by github actions
     runs-on: ubuntu-latest
     steps:
