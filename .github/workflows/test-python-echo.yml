@@ -1,7 +1,9 @@
 ---
 name: Test Python Echo
 
-on: push
+on: 
+  push:
+    branches: [ get-bliss-releases ]  
 
 jobs:
   test:
