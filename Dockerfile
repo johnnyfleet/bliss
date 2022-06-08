@@ -5,7 +5,7 @@ HEALTHCHECK --interval=5s \
             --timeout=5s \
             CMD curl -f http://127.0.0.1:3220 || exit 1
 
-RUN apk add --update-cache curl bash && rm -rf /var/cache/apk/*
+RUN apk add --update-cache curl bash && apk -U upgrade && rm -rf /var/cache/apk/* 
 
 # Rev-locking this to ensure reproducible builds
 #RUN wget -O /tmp/runas.sh 'https://raw.githubusercontent.com/coppit/docker-inotify-command/dd981dc799362d47387da584e1a276bbd1f1bd1b/runas.sh'
