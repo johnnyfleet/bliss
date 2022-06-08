@@ -1,12 +1,11 @@
-FROM library/openjdk:17-slim-bullseye
+FROM library/amazoncorretto:17-alpine
 LABEL maintainer="John Stephenson, https://github.com/johnnyfleet"
 
 HEALTHCHECK --interval=5s \
             --timeout=5s \
             CMD curl -f http://127.0.0.1:3220 || exit 1
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends curl bash wget && apt-get upgrade -y
+RUN apk add --update-cache curl bash && rm -rf /var/cache/apk/*
 
 # Rev-locking this to ensure reproducible builds
 #RUN wget -O /tmp/runas.sh 'https://raw.githubusercontent.com/coppit/docker-inotify-command/dd981dc799362d47387da584e1a276bbd1f1bd1b/runas.sh'
