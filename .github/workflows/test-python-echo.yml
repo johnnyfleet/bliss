@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.1.0
       - run: |
-          output=$(test-echo.py)
+          output=$(python test-echo.py)
           echo "::set-output name=changelog::$output"
         id: step1
       - name: Print changelog
