@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.1.0
       - run: |
-          output=$(python test-echo.py)
+          output="$(python test-echo.py)"
           output="${output//'%'/'%25'}"
           output="${output//$'\n'/'%0A'}"
           output="${output//$'\r'/'%0D'}" 
