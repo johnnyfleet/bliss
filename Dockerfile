@@ -13,12 +13,9 @@ RUN wget -O /tmp/mapids.sh 'https://github.com/coppit/docker-inotify-command/blo
 #RUN chmod +x /tmp/runas.sh
 RUN chmod +x /tmp/mapids.sh
 
-# Run as root by default
-
+# Create non-root user
 RUN addgroup -S bliss && adduser -S bliss -G bliss
 
-#ENV USER_ID 0
-#ENV GROUP_ID 0
 ENV UMASK 0000
 ENV UMAP ""
 ENV GMAP ""
@@ -30,6 +27,7 @@ RUN java -jar /tmp/latest.jar -options /tmp/auto-install.properties
 RUN ln -s /root /config
 RUN chown -R  bliss: /bliss
 
+# Run as non-root by default
 USER bliss
 
 CMD /bliss/bin/bliss.sh
