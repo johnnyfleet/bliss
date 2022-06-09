@@ -15,8 +15,10 @@ RUN chmod +x /tmp/mapids.sh
 
 # Run as root by default
 
-ENV USER_ID 0
-ENV GROUP_ID 0
+RUN addgroup -S bliss && adduser -S bliss -G bliss
+
+#ENV USER_ID 0
+#ENV GROUP_ID 0
 ENV UMASK 0000
 ENV UMAP ""
 ENV GMAP ""
@@ -26,9 +28,11 @@ RUN curl -L http://www.blisshq.com/app/latest-linux-version|xargs wget -O /tmp/l
 RUN echo INSTALL_PATH=/bliss > /tmp/auto-install.properties
 RUN java -jar /tmp/latest.jar -options /tmp/auto-install.properties
 RUN ln -s /root /config
-RUN chmod 777 /bliss
-CMD /bliss/bin/bliss.sh
+RUN chown -R  bliss: /bliss
 
+USER bliss
+
+CMD /bliss/bin/bliss.sh
 
 VOLUME /config /music
 
