@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        bliss_version: [20220531,20220513,20220503,20220419,20220329]
+        bliss_version: [latest,20220531,20220513,20220503,20220419,20220329]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
