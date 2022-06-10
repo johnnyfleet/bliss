@@ -4,7 +4,7 @@ name: Parallel Test
 on: push
 
 jobs:
-  gradle:
+  Build-Docker:
     strategy:
       fail-fast: false
       matrix:
