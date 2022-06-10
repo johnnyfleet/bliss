@@ -1,0 +1,24 @@
+---
+name: Parallel Test
+
+on: push
+
+jobs:
+  gradle:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        jdk: [8, 11, 14]
+    runs-on: ${{ matrix.os }}
+    env:
+      JDK_VERSION:  ${{ matrix.jdk }}
+
+  steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    ...
+    - name: Setup Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.jdk }}
