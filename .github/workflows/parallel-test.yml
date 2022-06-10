@@ -14,7 +14,14 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Build and tag image
-        run: docker build -t "johnnyfleet/bliss-test:$TAG" .
-        env:
-          TAG: ${{ matrix.bliss_version }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          platforms: linux/amd64
+          tags: johnnyfleet/bliss-test:${{ matrix.bliss_version }}
