@@ -27,7 +27,7 @@ jobs:
           docker build -t johnnyfleet/bliss:${{ github.sha }} .
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@2b22459068a4bb8c90967a22dc6aea5a617427b2
+        uses: aquasecurity/trivy-action@0105373003c89c494a3f436bd5efc57f3ac1ca20
         with:
           image-ref: 'johnnyfleet/bliss:${{ github.sha }}'
           format: 'template'
