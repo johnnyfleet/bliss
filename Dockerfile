@@ -22,7 +22,7 @@ RUN wget -O /tmp/mapids.sh 'https://github.com/coppit/docker-inotify-command/blo
 RUN chmod +x /tmp/mapids.sh
 
 # Create non-root user
-RUN addgroup -S bliss && adduser -S bliss -G bliss
+# RUN addgroup -S bliss && adduser -S bliss -G bliss
 
 ENV UMASK 0000
 ENV UMAP ""
