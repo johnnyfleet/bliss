@@ -10,8 +10,8 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
 
-RUN addgroup -S -s /bin/sh $USER_GID \
-    && adduser -S $USERNAME -G $USER_GID -u $USER_UID \
+RUN addgroup -S $USER_GID \
+    && adduser -S -s /bin/sh $USERNAME -G $USER_GID -u $USER_UID \
     && apk add --update-cache curl bash \
     && apk -U upgrade && rm -rf /var/cache/apk/* 
 
