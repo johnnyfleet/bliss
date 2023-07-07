@@ -31,7 +31,7 @@ ENV GMAP ""
 RUN curl -L http://www.blisshq.com/app/latest-linux-version|xargs wget -O /tmp/latest.jar \
     && echo INSTALL_PATH=/bliss > /tmp/auto-install.properties \
     && java -jar /tmp/latest.jar -options /tmp/auto-install.properties \
-    && ln -s /root /config \
+#    && ln -s /root /config \
     && chown -R  bliss: /bliss
 
 # Run as non-root by default
