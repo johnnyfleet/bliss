@@ -27,6 +27,7 @@ RUN addgroup -S $USER_GID \
 ENV UMASK 0000
 ENV UMAP ""
 ENV GMAP ""
+ENV VMARGS=-Dbliss_working_directory=/config
 
 RUN curl -L http://www.blisshq.com/app/latest-linux-version|xargs wget -O /tmp/latest.jar \
     && echo INSTALL_PATH=/bliss > /tmp/auto-install.properties \
