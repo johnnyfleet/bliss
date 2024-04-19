@@ -4,13 +4,23 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    groups:
+      applies-to: version-updates
+      update-types:
+        - "minor"
+        - "patch"
     assignees:
       - "johnnyfleet"
 
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    groups:
+      applies-to: version-updates
+      update-types:
+        - "minor"
+        - "patch"
     assignees:
       - "johnnyfleet"
