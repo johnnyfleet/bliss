@@ -1,4 +1,4 @@
-FROM library/amazoncorretto:22-alpine
+FROM library/amazoncorretto:23-alpine
 LABEL maintainer="John Stephenson, https://github.com/johnnyfleet"
 
 HEALTHCHECK --interval=5s \
